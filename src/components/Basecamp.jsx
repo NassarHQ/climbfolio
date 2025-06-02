@@ -106,7 +106,7 @@ export default function SOSDevice() {
               C15 448, 5 452, 15 460
               C5 468, 15 472, 5 480
               C15 488, 5 492, 10 500"
-            stroke="#ffffff"
+            stroke="#9EA8AC"
             strokeWidth="6"
             fill="none"
             strokeLinecap="round"
