@@ -1,0 +1,103 @@
+/* TechPixelAnimation.css */
+.tech-animation-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    aspect-ratio: 1;
+  }
+  
+  .tech-animation-svg {
+    width: 100%;
+    height: 100%;
+    max-height: 300px;
+  }
+  
+  /* Your existing animations remain the same */
+  .circuit-path {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  /* Add responsive styles */
+  @media (max-width: 768px) {
+    .tech-animation-container {
+      max-width: 300px; /* Smaller on tablets */
+      margin: 0 auto; /* Center the animation */
+    }
+  
+    .tech-animation-svg {
+      max-height: 250px;
+    }
+  
+    /* Adjust falling animation for smaller height */
+    @keyframes fall {
+      0% {
+        transform: translateY(-10px);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(250px); /* Adjusted for smaller height */
+        opacity: 0;
+      }
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .tech-animation-container {
+      max-width: 200px; /* Even smaller on phones */
+    }
+  
+    .tech-animation-svg {
+      max-height: 200px;
+    }
+  
+    /* Readjust falling animation for mobile */
+    @keyframes fall {
+      0% {
+        transform: translateY(-10px);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(200px); /* Adjusted for mobile height */
+        opacity: 0;
+      }
+    }
+  
+    /* Make interactive elements more touch-friendly */
+    .interactive-dot {
+      transform-origin: center;
+    }
+  
+    .interactive-dot:hover {
+      transform: scale(2); /* Larger touch target */
+    }
+  }
+  
+  /* For very small devices */
+  @media (max-width: 320px) {
+    .tech-animation-container {
+      max-width: 150px;
+    }
+  
+    .tech-animation-svg {
+      max-height: 150px;
+    }
+  
+    @keyframes fall {
+      100% {
+        transform: translateY(150px);
+      }
+    }
+  }

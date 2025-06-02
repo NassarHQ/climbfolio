@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.projects-container {
+  min-height: 100vh;
+  background-color: #0a0a1f;
+
+  position: relative;
+  overflow: hidden;
+  margin-top: -20px; /* This will pull the projects section up */
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.project-card {
+  background: linear-gradient(45deg, #141432, #1a1a3a);
+  border: 2px solid #ffd700;
+  padding: 1.5rem;
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ffd700, #ff6b6b, #4ecdc4);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-title {
+  font-family: 'Press Start 2P', cursive;
+  color: #ffd700;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 0px #000;
+}
+
+.project-period {
+  color: #ffd700;
+  font-size: 0.7rem;
+  font-family: 'Press Start 2P', cursive;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.project-description {
+  color: #ffffff;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  font-family: 'Press Start 2P', cursive;
+  line-height: 1.6;
+  text-shadow: 1px 1px 0px #000;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tech-tag {
+  background: #ffd700;
+  color: #000000;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.7rem;
+  font-family: 'Press Start 2P', cursive;
+  clip-path: polygon(0% 0%, 95% 0, 100% 50%, 95% 100%, 0% 100%);
+}
+
+.project-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #141432;
+  border: 4px solid #ffd700;
+  padding: 2rem;
+  max-width: 800px;
+  width: 90%;
+  position: relative;
+  font-family: 'Press Start 2P', cursive;
+  color: #ffffff;
+}
+
+.modal-header {
+  position: relative;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #ffd700;
+}
+
+.modal-title {
+  color: #ffd700;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 0px #000;
+  margin-bottom: 0.5rem;
+}
+
+.modal-period {
+  color: #ffd700;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.achievements-title {
+  color: #ffd700;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 0px #000;
+}
+
+.achievements-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.achievements-list li {
+  color: #ffffff;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  padding-left: 1rem;
+  position: relative;
+  text-shadow: 1px 1px 0px #000;
+}
+
+.achievements-list li::before {
+  content: '►';
+  position: absolute;
+  left: 0;
+  color: #ffd700;
+  font-size: 0.6rem;
+}
+
+.close-button {
+position: absolute;
+  top: -2.45rem;
+  right: -1.25rem;
+  width: 32px;
+  height: 32px;
+  background: #1a1a3a;
+  border: 2px solid #ffd700;
+  color: #ffd700;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.close-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #ffd700;
+  box-sizing: border-box;
+}
+
+.close-button:hover {
+  color: #ffffff;
+}
+
+.pixel-corner {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #ffd700;
+}
+
+.corner-tl { top: -2px; left: -2px; }
+.corner-tr { top: -2px; right: -2px; }
+.corner-bl { bottom: -2px; left: -2px; }
+.corner-br { bottom: -2px; right: -2px; }
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-content {
+    padding: 1rem;
+    margin: 1rem;
+  }
+  
+  .project-title {
+    font-size: 0.9rem;
+  }
+  
+  .project-description {
+    font-size: 0.7rem;
+  }
+}

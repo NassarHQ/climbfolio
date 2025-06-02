@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 2px rgba(227, 194, 139, 0.4),
+                 0 0 4px rgba(227, 194, 139, 0.3),
+                 0 0 6px rgba(255, 152, 0, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 3px rgba(227, 194, 139, 0.5),
+                 0 0 6px rgba(255, 152, 0, 0.4),
+                 0 0 8px rgba(255, 152, 0, 0.3);
+  }
+  100% {
+    text-shadow: 0 0 2px rgba(227, 194, 139, 0.4),
+                 0 0 4px rgba(227, 194, 139, 0.3),
+                 0 0 6px rgba(255, 152, 0, 0.2);
+  }
+}
+
+
+.navigation-container {
+  position: absolute;
+  left: 5%; /* Position navigation to the left of the sentence */
+  top:8%; /* Vertically align with the text */
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-direction: column; /* Stack icons and names vertically */
+  gap: 20px; /* Add space between navigation items */
+  z-index: 3; /* Ensure it appears above other elements */
+  background: transparent;
+}
+
+.navigation-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  margin-top: -7rem; /* Moves it upward */
+}
+
+.nav-item {
+  font-family: 'Press Start 2P', cursive;
+  display: flex;
+  flex-direction: column; /* Stack icon and text */
+  align-items: center; /* Center icon and text */
+  gap: 5px; /* Space between icon and text */
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.nav-item:hover {
+  transform: translateY(-15px);
+}
+
+.icon-container {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+
+}
+
+
+.nav-text {
+  font-family: 'Press Start 2P', cursive;
+  color: #FFD700;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.nav-item:hover .icon-container,
+.nav-item:hover .nav-text {
+  animation: glow 1.5s infinite;
+  color: #ece19c;
+}
+
+.pixel-art {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+@media screen and (max-width: 768px) {
+  .navigation-grid {
+
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .icon-container {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .nav-text {
+    font-size: 0.65rem;
+  }
+  
+  .nav-item {
+    flex: 0 1 auto;
+  }
+}   
