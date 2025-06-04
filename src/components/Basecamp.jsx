@@ -134,12 +134,12 @@ export default function SOSDevice() {
       )}
 
       {/* Device with port */}
-      <div className="relative mt-96 w-96">
+      <div className="relative mt-24 w-96">
         {/* Semi-circle port */}
         <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-12 h-6 bg-yellow-400 rounded-t-full border-2 border-yellow-700 z-10"></div>
 
         {/* Main Device */}
-        <div className="relative z-10 bg-gradient-to-b from-red-600 to-red-800 rounded-2xl shadow-2xl w-full h-[28rem] flex flex-col items-center justify-between p-6 border-4 border-red-700/50">
+        <div className="relative z-10 bg-gradient-to-b from-red-600 to-red-800 rounded-2xl shadow-2xl w-full h-[28rem] flex flex-col items-center justify-between p-4 border-4 border-red-700/50">
           {/* Corner dots */}
           <div className="absolute top-2 left-2 w-2 h-2 bg-red-300/30 rounded-full"></div>
           <div className="absolute top-2 right-2 w-2 h-2 bg-red-300/30 rounded-full"></div>
