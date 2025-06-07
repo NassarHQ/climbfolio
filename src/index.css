@@ -1,3 +1,12 @@
+/* src/index.css */
+@import url("https://fonts.googleapis.com/css2?family=Winky+Rough:wght@300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Monofett&family=Varela+Round&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}

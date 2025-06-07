@@ -1,9 +1,9 @@
-import React from 'react'
+// import React from 'react'
 
-const RopeNav = () => {
-  return (
-    <div>RopeNav</div>
-  )
-}
+// const RopeNav = () => {
+//   return (
+//     <div>RopeNav</div>
+//   )
+// }
 
-export default RopeNav
+// export default RopeNav

@@ -1,91 +1,87 @@
-// import React, { useState, useEffect } from "react";
-// import { Menu, X } from "lucide-react";
+import { label } from "framer-motion/client";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-// const navigation = [
-//   { name: "🏕️ Basecamp", href: "#basecamp" },
-//   { name: "🧗 About", href: "#about" },
-//   { name: "🔥 Projects", href: "#projects" },
-//   { name: "📍 Contact", href: "#contact" },
-// ];
+const Navbar = () => {
+  const chalkLines = ["top", "mid", "bottom"];
+  const [open, setOpen] = useState(false);
 
-// export default function Navbar() {
-//   const [isOpen, setIsOpen] = useState(false);
-//   const [scrolled, setScrolled] = useState(false);
+  return (
+    <nav className="fixed top-0 left-0 w-full bg-black/50 backdrop-blur-sm z-50">
+      <div className="w-ful mx-auto flex items-center justify-between px-20 py-4">
+        <a
+          href="#hero"
+          className="font-rubikpuddles text-4xl font-semibold transform hover:scale-125 duration-1000"
+        >
+          <span className="bg-yellow-500 bg-clip-text text-transparent">M</span>
+          <span className="bg-blue-500 bg-clip-text text-transparent">N.</span>
+        </a>
 
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       setScrolled(window.scrollY > 20);
-//     };
-//     window.addEventListener("scroll", handleScroll);
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, []);
+        {/** Desktop Links */}
+        <ul className="font-winky hidden md:flex space-x-6">
+          {["About", "Skills", "Projects", "Experience", "Contact"].map(
+            (label) => (
+              <li
+                key={label}
+                className="text-white hover:bg-blue-500 bg-clip-text text-transparent hover:bg-clip-text hover:text-transparent leading-normal hover:scale-125 duration-300"
+              >
+                <a
+                  href={`#${label.toLowerCase()}`}
+                  className="text-2xl font-semibold transform "
+                >
+                  {label}
+                </a>
+              </li>
+            )
+          )}
+        </ul>
 
-//   return (
-//     <nav
-//       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-//         scrolled ? "opacity-0 pointer-events-none" : "opacity-100"
-//       }`}
-//     >
-//       {/* Centered Gradient Cylinder */}
-//       <div className="w-full flex justify-center pt-4">
-//         <div className="w-full max-w-6xl bg-gradient-to-tr from-blue-900 to-orange-600 rounded-full backdrop-blur-md overflow-hidden px-6 py-2 flex justify-between items-center">
-//           <div className="relative group">
-//             <div className="absolute -inset-2 bg-gradient-to-r from-emerald-700 via-green-500 to-yellow-300 rounded-lg blur opacity-10 group-hover:opacity-35 transition duration-1000 group-hover:duration-500"></div>
-//             <div className="relative text-2xl font-black bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300 cursor-pointer">
-//               Nassar.Dev
-//             </div>
-//           </div>
+        {/** Hamburger */}
+        <button
+          className="focus:outline-none md:hidden"
+          onClick={() => setOpen((prev) => !prev)}
+          aria-label="Toggle Navigation Meny"
+        >
+          {/** Simple three-line hamburger */}
+          <div className="space-y-0.5 hover:scale-125 duration-700">
+            {chalkLines.map((pos) => (
+              <div
+                key={pos}
+                className="rounded-full w-4 h-0.5 bg-chalk-white"
+              ></div>
+            ))}
+          </div>
+        </button>
+      </div>
 
-//           {/* Desktop Nav */}
-//           <div className="hidden md:flex items-center space-x-6">
-//             {navigation.map((item) => (
-//               <a
-//                 key={item.name}
-//                 href={item.href}
-//                 className="relative px-4 py-2 font-medium text-white/80 transition-all duration-300 group flex items-center space-x-1"
-//               >
-//                 <span className="text-white/80">{item.name.slice(0, 2)}</span>
-//                 <span className="group-hover:bg-gradient-to-r group-hover:from-blue-900 to-orange-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-//                   {item.name.slice(2)}
-//                 </span>
-//               </a>
-//             ))}
-//           </div>
+      {/** Mobile Menu */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="md:hidden bg-rock-gray/90 overflow-hidden backdrop-blur-3xl"
+          >
+            <ul className="space-y-4 flex flex-col items-center px-4 py-4">
+              {["About", "Skills", "Projects", "Experience", "Contact"].map(
+                (label) => (
+                  <li
+                    key={label}
+                    /*hover:bg-blue-500 bg-clip-text text-transparent hover:bg-clip-text hover:text-transparent*/
+                    className="text-2xlfont-winky text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-gray-400 hover:from-blue-500 hover:to-blue-500 transition-all duration-300 hover:scale-125 cursor-pointer"
+                  >
+                    {label}
+                  </li>
+                )
+              )}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
+  );
+};
 
-//           {/* Mobile Menu Toggle */}
-//           <div className="md:hidden">
-//             <button
-//               onClick={() => setIsOpen(!isOpen)}
-//               className="p-2 text-gray-100 hover:text-white focus:outline-none"
-//             >
-//               {isOpen ? (
-//                 <X className="h-6 w-6" />
-//               ) : (
-//                 <Menu className="h-6 w-6" />
-//               )}
-//             </button>
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* Mobile Nav Menu */}
-//       {isOpen && (
-//         <div className="md:hidden bg-white/95 backdrop-blur-xl px-6 pb-4 pt-2 shadow-md border-t border-gray-200">
-//           {navigation.map((item) => (
-//             <a
-//               key={item.name}
-//               href={item.href}
-//               onClick={() => setIsOpen(false)}
-//               className="block py-3 text-gray-800 hover:text-black font-medium transition"
-//             >
-//               {item.name}
-//             </a>
-//           ))}
-//           <button className="w-full mt-4 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300">
-//             Let’s Talk ✨
-//           </button>
-//         </div>
-//       )}
-//     </nav>
-//   );
-// }
+export default Navbar;

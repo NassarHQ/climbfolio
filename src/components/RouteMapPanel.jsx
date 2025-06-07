@@ -1,9 +1,9 @@
-import React from 'react'
+// import React from 'react'
 
-const RouteMapPanel = () => {
-  return (
-    <div>RouteMapPanel</div>
-  )
-}
+// const RouteMapPanel = () => {
+//   return (
+//     <div>RouteMapPanel</div>
+//   )
+// }
 
-export default RouteMapPanel
+// export default RouteMapPanel
