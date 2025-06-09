@@ -5,7 +5,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import StarryBackground from "./components/StarryBackground";
-// import Projects from "./components/Projects";
+import Projects from "./components/Projects";
 // import Experience from "./components/Experience";
 // import Contact from "./components/Contact";
 // import Footer from "./components/Footer";
@@ -19,8 +19,8 @@ function App() {
       <Hero />
       <About />
       <Skills />
-      {/* <Projects />
-      <Experience />
+      <Projects />
+      {/*<Experience />
       <Contact />
       <Footer /> */}
     </div>

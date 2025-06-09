@@ -28,14 +28,14 @@ const AboutMe = () => {
           {paragraphs.map((text, index) => (
             <motion.p
               key={index}
-              className="font-Josefin text-amber-300 text-base sm:text-lg leading-relaxed pl-4 border-l-4 border-white/10 hover:border-climbing-orange transition-all duration-300"
+              className="font-Josefin text-yellow-500 text-base sm:text-lg leading-relaxed pl-4 border-l-4 border-white/10 hover:border-climbing-orange transition-all duration-100"
               variants={fadeInUp}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               whileHover={{
                 backgroundColor: "rgba(255,255,255,0.02)",
-                scale: 1.01,
+                scale: 1.02,
               }}
             >
               {text}

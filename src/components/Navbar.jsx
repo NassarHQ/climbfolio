@@ -62,7 +62,7 @@ const Navbar = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="md:hidden bg-rock-gray/90 overflow-hidden backdrop-blur-3xl"
+            className="font-winky md:hidden bbg-black/50 overflow-hidden"
           >
             <ul className="space-y-4 flex flex-col items-center px-4 py-4">
               {["About", "Skills", "Projects", "Experience", "Contact"].map(
