@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import cindara from "../assets/planetOne.png";
 import aetheron from "../assets/planetTwo.png";
 import nyxora from "../assets/planetThree.png";
+import sun from "../assets/sun.png";
 
 const planets = [
   {
@@ -54,31 +55,54 @@ const Projects = () => {
           Projects
         </h2>
 
-        {/** Sun */}
-        <div className="relative justify-center flex items-center">
-          <div className="w-24 h-24 bg-gradient-to-tr from-orange-300 via-yellow-500 to-orange-500 rounded-full shadow-[0_0_1000px_250px_rgba(253,224,71,0.6)]"></div>
-        </div>
-
         {/** Orbits */}
-        <div className="relative w-[72rem] h-[72rem] mt-7">
-          <div className="absolute inset-0 border border-white/30 rounded-full">
-            <img src={cindara} alt="planet cindara" className="w-24 h-24"></img>
+        <div className="relative w-[65rem] h-[65rem] mt-7">
+          {/* Orbit 1 */}
+          <div className="absolute inset-0 border border-white/30 rounded-full animate-[spin_60s_linear_infinite]">
+            <div className="absolute left-1/2 top-1/2">
+              <div className="translate-x-[29rem] -translate-y-1/2">
+                <img src={cindara} alt="planet cindara" className="w-24 h-24" />
+              </div>
+            </div>
           </div>
-          <div className="absolute inset-[10rem] border border-white/30 rounded-full">
-            <img
-              src={aetheron}
-              alt="planet aetheron"
-              className="w-24 h-24"
-            ></img>
+
+          {/* Orbit 2 */}
+          <div className="absolute inset-[10rem] border border-white/30 rounded-full animate-[spin_90s_linear_infinite]">
+            <div className="absolute left-1/2 top-1/2">
+              <div className="translate-x-[19rem] -translate-y-1/2">
+                <img
+                  src={aetheron}
+                  alt="planet aetheron"
+                  className="w-24 h-24"
+                />
+              </div>
+            </div>
           </div>
-          <div className="absolute inset-[20rem] border border-white/30 rounded-full">
-            <img
-              src={nyxora}
-              alt="planet nyxora"
-              className="w-24 h-24 bg-transparent bg-clip-border"
-            ></img>
+
+          {/* Orbit 3 */}
+          <div className="absolute inset-[20rem] border border-white/30 rounded-full animate-[spin_120s_linear_infinite]">
+            <div className="absolute left-1/2 top-1/2">
+              <div className="translate-x-[9rem] -translate-y-1/2">
+                <img
+                  src={nyxora}
+                  alt="planet nyxora"
+                  className="w-24 h-24 bg-transparent bg-clip-border"
+                />
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+      <div className="absolute w-40 h-40 flex items-center justify-center mt-16">
+        {/* Glow aura */}
+        <div className="absolute w-[400%] h-[400%] rounded-full bg-[rgba(255,166,0,0.35)] blur-[150px]"></div>
+
+        {/* Sun */}
+        <img
+          src={sun}
+          alt="Sun"
+          className="w-32 h-32 rounded-full animate-[spin_100s_linear_infinite]"
+        />
       </div>
     </section>
   );

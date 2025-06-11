@@ -19,34 +19,11 @@ module.exports = {
         rubikpuddles: ['"Rubik Puddles"', "cursive"],
         Josefin: ['"Josefin Sans"', "sans"],
       },
-      // animation: {
-      //   typewriter:
-      //     "typewriter 2s steps(11) forwards, blink 1s steps(11) infinite 2s",
-      // },
-      // keyframes: {
-      //   typewriter: {
-      //     to: {
-      //       left: "100%",
-      //     },
-      //   },
-      //   blink: {
-      //     "0%": {
-      //       opacity: "0",
-      //     },
-      //     "0.1%": {
-      //       opacity: "1",
-      //     },
-      //     "50%": {
-      //       opacity: "1",
-      //     },
-      //     "50.1%": {
-      //       opacity: "0",
-      //     },
-      //     "100%": {
-      //       opacity: "0",
-      //     },
-      //   },
-      // },
+      animation: {
+        "spin-slow": "spin 20s linear infinite",
+        "spin-slower": "spin 30s linear infinite",
+        "spin-slowest": "spin 40s linear infinite",
+      },
     },
   },
   plugins: [],
