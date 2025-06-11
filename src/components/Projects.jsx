@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
-import cindara from "../assets/planetfire.png";
-import aetheron from "../assets/planetjup.png";
-import nyxora from "../assets/planetpurple.png";
+import cindara from "../assets/planetOne.png";
+import aetheron from "../assets/planetTwo.png";
+import nyxora from "../assets/planetThree.png";
 
 const planets = [
   {
@@ -54,13 +54,30 @@ const Projects = () => {
           Projects
         </h2>
 
+        {/** Sun */}
+        <div className="relative justify-center flex items-center">
+          <div className="w-24 h-24 bg-gradient-to-tr from-orange-300 via-yellow-500 to-orange-500 rounded-full shadow-[0_0_1000px_250px_rgba(253,224,71,0.6)]"></div>
+        </div>
+
         {/** Orbits */}
-        <div className="relative w-[48rem] h-[48rem] mt-7">
+        <div className="relative w-[72rem] h-[72rem] mt-7">
           <div className="absolute inset-0 border border-white/30 rounded-full">
-            <img src={cindara} alt="planet cindara"></img>
+            <img src={cindara} alt="planet cindara" className="w-24 h-24"></img>
           </div>
-          <div className="absolute inset-[5rem] border border-white/30 rounded-full"></div>
-          <div className="absolute inset-[10rem] border border-white/30 rounded-full"></div>
+          <div className="absolute inset-[10rem] border border-white/30 rounded-full">
+            <img
+              src={aetheron}
+              alt="planet aetheron"
+              className="w-24 h-24"
+            ></img>
+          </div>
+          <div className="absolute inset-[20rem] border border-white/30 rounded-full">
+            <img
+              src={nyxora}
+              alt="planet nyxora"
+              className="w-24 h-24 bg-transparent bg-clip-border"
+            ></img>
+          </div>
         </div>
       </div>
     </section>
