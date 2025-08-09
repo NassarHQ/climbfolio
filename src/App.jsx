@@ -6,8 +6,8 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import StarryBackground from "./components/StarryBackground";
 import Projects from "./components/Projects";
-// import Experience from "./components/Experience";
-// import Contact from "./components/Contact";
+import Experience from "./components/Experience";
+import Contact from "./components/Contact";
 // import Footer from "./components/Footer";
 
 function App() {
@@ -20,9 +20,9 @@ function App() {
       <About />
       <Skills />
       <Projects />
-      {/*<Experience />
+      <Experience />
       <Contact />
-      <Footer /> */}
+      {/*<Footer /> */}
     </div>
   );
 }
