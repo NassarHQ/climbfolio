@@ -56,6 +56,25 @@ const Experience = () => {
       ],
       category: "Education",
     },
+    // NEW: Adobe Student Ambassador
+    {
+      title: "Adobe Student Ambassador",
+      company: "San Jose State University",
+      location: "San Jose, CA",
+      duration: "Jun 2025 – Present",
+      description:
+        "Selected to represent Adobe on campus—spreading awareness of Creative Cloud, hosting events, and helping students get hands-on with the tools.",
+      impact: "Campus Creative Tools Adoption",
+      skills: ["Community Outreach", "Event Planning", "Adobe Creative Cloud", "Brand Advocacy"],
+      color: "purple",
+      icon: Sparkles,
+      achievements: [
+        "Planned and promoted student events",
+        "Guided peers on Creative Cloud basics",
+        "Partnered with campus orgs to boost reach",
+      ],
+      category: "Leadership",
+    },
   ];
 
   const getColorClasses = (color) => {
@@ -120,7 +139,8 @@ const Experience = () => {
       </motion.div>
 
       {/* Experience Cards */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {/* Change to 3 columns on large screens so all three sit side-by-side */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
         {isInView &&
           experiences.map((exp, index) => {
             const color = getColorClasses(exp.color);
@@ -139,15 +159,11 @@ const Experience = () => {
                 <div className="relative z-10 p-8 bg-gradient-to-br from-gray-900/90 to-gray-800/90 group-hover:from-gray-900/80 group-hover:to-gray-800/80 transition-all duration-500">
                   <div className="flex items-start justify-between mb-6">
                     <div className="flex items-center space-x-4">
-                      <div
-                        className={`p-3 ${color.bg} rounded-xl border ${color.border}`}
-                      >
+                      <div className={`p-3 ${color.bg} rounded-xl border ${color.border}`}>
                         <Icon size={24} className={color.text} />
                       </div>
                       <div>
-                        <h3
-                          className={`font-bold text-xl md:text-2xl ${color.text} mb-1`}
-                        >
+                        <h3 className={`font-bold text-xl md:text-2xl ${color.text} mb-1`}>
                           {exp.title}
                         </h3>
                         <span className="text-xs uppercase tracking-wide text-white/50 font-medium">
@@ -155,9 +171,7 @@ const Experience = () => {
                         </span>
                       </div>
                     </div>
-                    <div
-                      className={`px-3 py-1 ${color.bg} rounded-full border ${color.border}`}
-                    >
+                    <div className={`px-3 py-1 ${color.bg} rounded-full border ${color.border}`}>
                       <TrendingUp size={16} className={color.text} />
                     </div>
                   </div>
@@ -179,28 +193,18 @@ const Experience = () => {
                     </div>
                   </div>
 
-                  <p className="text-white/80 mb-6 leading-relaxed">
-                    {exp.description}
-                  </p>
+                  <p className="text-white/80 mb-6 leading-relaxed">{exp.description}</p>
 
-                  <div
-                    className={`mb-6 p-4 ${color.bg} rounded-xl border ${color.border}`}
-                  >
+                  <div className={`mb-6 p-4 ${color.bg} rounded-xl border ${color.border}`}>
                     <div className="flex items-center gap-2 mb-2">
                       <Award size={16} className={color.text} />
-                      <span className="text-sm font-semibold text-white/70">
-                        Key Impact
-                      </span>
+                      <span className="text-sm font-semibold text-white/70">Key Impact</span>
                     </div>
-                    <p className={`font-bold ${color.text} text-lg`}>
-                      {exp.impact}
-                    </p>
+                    <p className={`font-bold ${color.text} text-lg`}>{exp.impact}</p>
                   </div>
 
                   <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-white/70 mb-3">
-                      Achievements
-                    </h4>
+                    <h4 className="text-sm font-semibold text-white/70 mb-3">Achievements</h4>
                     <div className="flex flex-wrap gap-2">
                       {exp.achievements.map((a, i) => (
                         <span
@@ -214,9 +218,7 @@ const Experience = () => {
                   </div>
 
                   <div>
-                    <h4 className="text-sm font-semibold text-white/70 mb-3">
-                      Technologies
-                    </h4>
+                    <h4 className="text-sm font-semibold text-white/70 mb-3">Technologies</h4>
                     <div className="flex flex-wrap gap-2">
                       {exp.skills.map((skill, i) => (
                         <span

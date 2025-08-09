@@ -1,0 +1,94 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients for realistic lighting -->
+    <radialGradient id="spaceGrad" cx="0.3" cy="0.3">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </radialGradient>
+    
+    <linearGradient id="rockGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6b7280"/>
+      <stop offset="50%" stop-color="#4b5563"/>
+      <stop offset="100%" stop-color="#374151"/>
+    </linearGradient>
+    
+    <radialGradient id="planetGrad" cx="0.3" cy="0.3">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="70%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1e40af"/>
+    </radialGradient>
+    
+    <linearGradient id="climberGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Deep space background -->
+  <circle cx="16" cy="16" r="16" fill="url(#spaceGrad)"/>
+  
+  <!-- Distant planet with atmospheric glow -->
+  <circle cx="24" cy="8" r="4.5" fill="url(#planetGrad)" opacity="0.8"/>
+  <circle cx="24" cy="8" r="5.2" fill="none" stroke="#60a5fa" stroke-width="0.8" opacity="0.3"/>
+  
+  <!-- Realistic boulder formation with shadows -->
+  <path d="M6 20 Q10 16 15 17 Q20 18 26 22 L26 32 L6 32 Z" 
+        fill="#2d3748" opacity="0.6"/>
+  
+  <!-- Main climbing boulder with realistic texture -->
+  <path d="M8 24 L12 18 L16 16 L20 17 L24 19 L26 22 L24 26 L20 28 L16 29 L12 28 L10 26 Z" 
+        fill="url(#rockGrad)" stroke="#4b5563" stroke-width="0.5"/>
+  
+  <!-- Rock texture details -->
+  <path d="M12 20 L14 19 L16 20 L18 19" fill="none" stroke="#374151" stroke-width="0.8" opacity="0.7"/>
+  <path d="M16 22 L18 21 L20 22" fill="none" stroke="#374151" stroke-width="0.6" opacity="0.6"/>
+  <circle cx="14" cy="24" r="0.8" fill="#374151" opacity="0.5"/>
+  <circle cx="19" cy="25" r="0.6" fill="#374151" opacity="0.4"/>
+  
+  <!-- Realistic climber with proper proportions -->
+  <g transform="translate(16,22)">
+    <!-- Head with helmet -->
+    <circle cx="0" cy="-3" r="1.8" fill="url(#climberGrad)"/>
+    <circle cx="0" cy="-3" r="1.8" fill="none" stroke="#f59e0b" stroke-width="0.3"/>
+    
+    <!-- Torso -->
+    <ellipse cx="0" cy="-0.5" rx="1.2" ry="2.2" fill="url(#climberGrad)" opacity="0.9"/>
+    
+    <!-- Arms in climbing position -->
+    <ellipse cx="-2.2" cy="-2" rx="0.6" ry="1.8" fill="url(#climberGrad)" 
+             transform="rotate(-25 -2.2 -2)" opacity="0.8"/>
+    <ellipse cx="1.8" cy="-1" rx="0.5" ry="1.6" fill="url(#climberGrad)" 
+             transform="rotate(15 1.8 -1)" opacity="0.8"/>
+    
+    <!-- Legs -->
+    <ellipse cx="-0.8" cy="2.5" rx="0.5" ry="1.8" fill="url(#climberGrad)" 
+             transform="rotate(-10 -0.8 2.5)" opacity="0.8"/>
+    <ellipse cx="0.6" cy="2.2" rx="0.5" ry="1.6" fill="url(#climberGrad)" 
+             transform="rotate(20 0.6 2.2)" opacity="0.8"/>
+    
+    <!-- Climbing holds/grip points -->
+    <circle cx="-2.5" cy="-2.5" r="0.3" fill="#eab308"/>
+    <circle cx="2" cy="-1.5" r="0.3" fill="#eab308"/>
+  </g>
+  
+  <!-- Realistic stars with twinkle -->
+  <g fill="#eab308">
+    <g transform="translate(7,5)">
+      <path d="M0,-1.5 L0.4,-0.5 L1.5,0 L0.4,0.5 L0,1.5 L-0.4,0.5 L-1.5,0 L-0.4,-0.5 Z" opacity="0.9"/>
+    </g>
+    <g transform="translate(26,4) scale(0.6)">
+      <path d="M0,-1.5 L0.4,-0.5 L1.5,0 L0.4,0.5 L0,1.5 L-0.4,0.5 L-1.5,0 L-0.4,-0.5 Z" opacity="0.7"/>
+    </g>
+    <g transform="translate(5,12) scale(0.4)">
+      <path d="M0,-1.5 L0.4,-0.5 L1.5,0 L0.4,0.5 L0,1.5 L-0.4,0.5 L-1.5,0 L-0.4,-0.5 Z" opacity="0.8"/>
+    </g>
+  </g>
+  
+  <!-- Subtle space nebula -->
+  <ellipse cx="12" cy="10" rx="3" ry="1.5" fill="#3b82f6" opacity="0.1"/>
+  
+  <!-- Space dust particles -->
+  <circle cx="4" cy="14" r="0.3" fill="#64748b" opacity="0.5"/>
+  <circle cx="28" cy="18" r="0.2" fill="#64748b" opacity="0.4"/>
+  <circle cx="9" cy="8" r="0.25" fill="#64748b" opacity="0.6"/>
+</svg>
